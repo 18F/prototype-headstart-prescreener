@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Could your child be eligible for a Head Start program?</h1>
+  <div class="usa-prose">
+    <div class="margin-y-4">
+      <h2>Any of these could make your child eligible:</h2>
+      <div class="grid-row">
+        <div class="tablet:grid-col-3">
+          <div class="card">Your income.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card">Your living situation.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card">If your child is in fostercare.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card">Your eligibility for other programs.</div>
+        </div>
+      </div>
+    </div>
+    <div class="margin-y-4">
+      <h2>Important information to know:</h2>
+      <div class="grid-row">
+        <div class="tablet:grid-col-3">
+          <div class="card card-tall">Even if they are eligible, your child is not guaranteed a Head Start slot.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card card-tall">An interview is part of every Head Start application.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card card-tall">You will need to provide documents that verify your eligibility.</div>
+        </div>
+        <div class="tablet:grid-col-3">
+          <div class="card card-tall">This website is not a final determination of eligibility for Head Start.</div>
+        </div>
+      </div>
+    </div>
+    <div class="margin-y-4">
+      <h2>Take this pre-screener to find out if your child might be eligible.</h2>
+      <div>An interview is an important part of the Head Start process. This web pre-screener will not take the place of an interview. It may help you decide to apply for Head Start.</div>
+    </div>
+    <form class="usa-form" action="/results" method="POST">
+      <label class="usa-label" for="income">Income</label>
+      <input class="usa-input" id="income" name="income" type="text" />
+
+      <label class="usa-label" for="household_size">Household Size</label>
+      <input class="usa-input" id="household_size" name="household_size" type="text" />
+
+      <label class="usa-label" for="state_or_territory">U.S. State or Territory</label>
+      <input class="usa-input" id="state_or_territory" name="state_or_territory" type="text" />
+
+      <br/>
+
+      <fieldset>
+        <legend>Please select any of the below that apply:</legend>
+        <div class="usa-checkbox">
+          <input class="usa-checkbox__input"
+                 type="checkbox"
+                 id="homelessness"
+                 value="homelessness"
+                 name="homelessness" />
+          <label class="usa-checkbox__label" for="homelessness">My family does not have safe and regular housing.</label>
+        </div>
+
+        <div class="usa-checkbox">
+          <input class="usa-checkbox__input"
+                 type="checkbox"
+                 id="fostercare"
+                 value="fostercare"
+                 name="fostercare" />
+          <label class="usa-checkbox__label" for="fostercare">My child is in fostercare.</label>
+        </div>
+
+        <div class="usa-checkbox">
+          <input class="usa-checkbox__input"
+                 type="checkbox"
+                 id="eligible_tanf_or_ssi"
+                 value="eligible_tanf_or_ssi"
+                 name="eligible_tanf_or_ssi" />
+          <label class="usa-checkbox__label" for="eligible_tanf_or_ssi">My family is eligible for TANF or SSI.</label>
+        </div>
+
+        <div class="usa-checkbox">
+          <input class="usa-checkbox__input"
+                 type="checkbox"
+                 id="disability"
+                 value="disability"
+                 name="disability" />
+          <label class="usa-checkbox__label" for="disability">My child may have a disability.</label>
+        </div>
+      </fieldset>
+
+      <input class="usa-button" type="submit" value="Submit">
+    </form>
+  </div>
+{% endblock %}

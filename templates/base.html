@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uswds-2.4.0/css/uswds.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uswds-2.4.0/css/uswds.min.css.map') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <style>
+  </style>
+  <body>
+    <div class="alert">
+      This is a demonstration website only.
+      Do not enter any private or personal data.
+    </div>
+    <div class="grid-container margin-y-5">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
