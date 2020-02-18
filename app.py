@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 import json
+import os
 
 app = Flask(__name__)
 
@@ -31,3 +32,7 @@ def submit_data():
     result = api_response.json()['families']['_']['head_start_eligibility_status']['2019']
 
     return render_template('results.html', result = result)
+
+if __name__ == "__main__":
+  port = int(os.getenv("PORT", 5000))
+  app.run(host = '0.0.0.0', port = port)

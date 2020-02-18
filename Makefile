@@ -1,2 +1,9 @@
 serve-local:
-	env FLASK_APP=app.py flask run
+	python app.py
+
+deploy:
+	cf push
+
+serve:
+	# (TODO) Productionize.
+	python app.py
