@@ -1,0 +1,7 @@
+---
+applications:
+- name: prototype-headstart-prescreener
+  buildpacks:
+    - python_buildpack
+  memory: 256M
+  command: make serve
